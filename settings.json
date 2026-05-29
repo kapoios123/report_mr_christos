@@ -1,0 +1,59 @@
+{
+  "supplier_mappings": [
+    {
+      "original": "XINYI GROUP(GLASS) COMPANY LIMITED",
+      "replacement": "XINYI",
+      "region": "China"
+    },
+    {
+      "original": "RIDER GLASS COMPANY LTD",
+      "replacement": "RIDER",
+      "region": "China"
+    },
+    {
+      "original": "REXI INDUSTRIES COMPANY LIMITED QINGDAO",
+      "replacement": "REXI",
+      "region": "China"
+    },
+    {
+      "original": "GLASSTECH CO LTD QINGDAO",
+      "replacement": "GLASSTECH",
+      "region": "China"
+    },
+    {
+      "original": "YUYIN GLASS CO., LTD QINGDAO",
+      "replacement": "YUYIN",
+      "region": "China"
+    },
+    {
+      "original": "SISECAM FLAT GLASS SOUTH ITALY SRL",
+      "replacement": "SISECAM",
+      "region": "China"
+    },
+    {
+      "original": "Cairo Glass Manufacturing Comp",
+      "replacement": "CAIRO",
+      "region": "China"
+    },
+    {
+      "original": "TRAKYA GLASS BULGARIA EAD",
+      "replacement": "TRAKYA",
+      "region": "China"
+    },
+    {
+      "original": "AGC GLASS EUROPE SALES NV/SA",
+      "replacement": "AGC",
+      "region": "China"
+    },
+    {
+      "original": "S.GOBAIN GLASS EGYPT",
+      "replacement": "S.GOBAIN",
+      "region": "China"
+    },
+    {
+      "original": "GULF MODERN TRADING CENTER G.M.T.C.",
+      "replacement": "G.M.T.C.",
+      "region": "China"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "_comment": "Dynamic Excel Formatter Pipeline — Rules Configuration v1.0",
+
+  "global_styles": {
+    "font_name"             : "Calibri",
+    "font_size"             : 11,
+    "header_font_size"      : 12,
+    "header_bg_color"       : "#2E4057",
+    "header_font_color"     : "#FFFFFF",
+    "base_row_color"        : "#FFFFFF",
+    "alternate_row_color"   : "#EDF2F7",
+    "default_column_width"  : 20,
+    "header_row_height"     : 32,
+    "freeze_header"         : true,
+    "auto_filter"           : true
+  },
+
+  "column_rules": {
+    "ID": {
+      "width"        : 8,
+      "alignment"    : "center"
+    },
+    "Project Name": {
+      "width"        : 30
+    },
+    "Status": {
+      "width"        : 16,
+      "alignment"    : "center"
+    },
+    "Deadline": {
+      "width"        : 16,
+      "alignment"    : "center",
+      "number_format": "DD/MM/YYYY"
+    },
+    "Budget": {
+      "width"        : 14,
+      "alignment"    : "right",
+      "number_format": "#,##0.00 €"
+    },
+    "Completion %": {
+      "width"        : 14,
+      "alignment"    : "center",
+      "number_format": "0\"%\""
+    },
+    "Owner": {
+      "width"        : 22
+    }
+  },
+
+  "conditional_rules": [
+    {
+      "_comment" : "Rule 1 — Deadline is in the past → entire row turns light red",
+      "column"   : "Deadline",
+      "type"     : "date_before_today",
+      "scope"    : "row",
+      "format"   : {
+        "bg_color"   : "#FFD6D6",
+        "font_color" : "#8B0000",
+        "bold"       : false,
+        "italic"     : false
+      }
+    },
+    {
+      "_comment" : "Rule 2 — Status = 'Delayed' → entire row is bold orange",
+      "column"   : "Status",
+      "type"     : "value_equals",
+      "value"    : "Delayed",
+      "scope"    : "row",
+      "format"   : {
+        "bg_color"   : "#FFF3CD",
+        "font_color" : "#7D4E00",
+        "bold"       : true,
+        "italic"     : false
+      }
+    },
+    {
+      "_comment" : "Rule 3 — Status = 'Cancelled' → row is grey + italic",
+      "column"   : "Status",
+      "type"     : "value_equals",
+      "value"    : "Cancelled",
+      "scope"    : "row",
+      "format"   : {
+        "bg_color"   : "#E8E8E8",
+        "font_color" : "#666666",
+        "bold"       : false,
+        "italic"     : true
+      }
+    },
+    {
+      "_comment" : "Rule 4 — Status = 'Completed' → row is light green",
+      "column"   : "Status",
+      "type"     : "value_equals",
+      "value"    : "Completed",
+      "scope"    : "row",
+      "format"   : {
+        "bg_color"   : "#D4EDDA",
+        "font_color" : "#155724",
+        "bold"       : false,
+        "italic"     : false
+      }
+    },
+    {
+      "_comment" : "Rule 5 — Completion % < 25 → only that cell turns red (cell scope)",
+      "column"   : "Completion %",
+      "type"     : "value_less_than",
+      "value"    : 25,
+      "scope"    : "cell",
+      "format"   : {
+        "bg_color"   : "#FF4D4D",
+        "font_color" : "#FFFFFF",
+        "bold"       : true,
+        "italic"     : false
+      }
+    },
+    {
+      "_comment" : "Rule 6 — Budget > 100000 → cell highlighted gold",
+      "column"   : "Budget",
+      "type"     : "value_greater_than",
+      "value"    : 100000,
+      "scope"    : "cell",
+      "format"   : {
+        "bg_color"   : "#FFD700",
+        "font_color" : "#4A3800",
+        "bold"       : true,
+        "italic"     : false
+      }
+    }
+  ]
+}
